@@ -70,19 +70,14 @@ public class PersonnelGroupeJdbcDAO implements DAO<PersonnelGroupe>{
 	@Override
 	public PersonnelGroupe update(PersonnelGroupe obj) {
 	try (Connection connect = DriverManager.getConnection(db)) {
-		List<PersonnelImuable> lp = obj.getAllPersonnel().stream()
-			.filter(e -> !e.isGroupe())
-			.map(e -> (PersonnelImuable) e)
-			.collect(Collectors.toList());
+		List<PersonnelImuable> lp = obj.getAllPersonnel().stream().filter(e -> !e.isGroupe()).map(e -> (PersonnelImuable) e).collect(Collectors.toList());
 		PreparedStatement prepare = connect.prepareStatement(
 				"DELETE FROM appartient"
 				+ "WHERE id = ?"
 		);
 		prepare.setString(1, obj.getId());
 		for (PersonnelImuable p : lp) {
-			prepare = connect.prepareStatement(
-					"INSERT INTO appartient "
-					+ "VALUES (?, ?)");
+			prepare = connect.prepareStatement("INSERT INTO appartient "+ "VALUES (?, ?)");
 			prepare.setString(1, obj.getId());
 			prepare.setString(2, p.getNom());
 			prepare.addBatch();
