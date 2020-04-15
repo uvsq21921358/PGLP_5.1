@@ -8,7 +8,6 @@ public abstract class ADAOFactory {
 	public abstract DAO<PersonnelGroupe> getPersonnelGroupeDAO();
 
 	public static ADAOFactory getFactory(DAOType type) {
-		if (type == DAOType.JDBC) return new JDAOFactory();
 		if (type == DAOType.Serial) return new DAOFactory();
 		return null;
 	}

@@ -34,9 +34,7 @@ public enum Serialiser {
 	
 	public static void main(String[] args) {
 		
-		JdbcInit ji = new JdbcInit();
-		ji.dropCreate(); // the 1st time, use jinit.createTables()
-		// ENVIRONNEMENT.run(args, DAOType.Serial);
-		ENVIRONNEMENT.run(args, DAOType.JDBC);
+		 ENVIRONNEMENT.run(args, DAOType.Serial);
+		
 	}
 }
