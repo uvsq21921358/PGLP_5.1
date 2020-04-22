@@ -16,7 +16,7 @@ public abstract class Serial<T extends Serializable> {
 	public T writeFile(T obj, String filename, LogInterface log) {
 		try (ObjectOutputStream	out = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(filename)))){
 			out.writeObject(obj);
-			log.write("Objet " + obj + " créé!");
+			log.write("Objet " + obj + " crÃ©e!");
 			return obj;
 		} 
 		catch (IOException e) {
@@ -27,7 +27,7 @@ public abstract class Serial<T extends Serializable> {
 	
 	public void deleteFile(String filename, LogInterface log) {
 		File file = new File(filename); 
-        if(file.delete()) log.write("Objet supprimé!"); 
+        if(file.delete()) log.write("Objet supprimÃ©!"); 
         else log.write("Suppression impossible");
 	}
 	
@@ -40,7 +40,7 @@ public abstract class Serial<T extends Serializable> {
 
 		try (ObjectInputStream in = new ObjectInputStream(new BufferedInputStream(new FileInputStream(filename)))) {
 			T obj = (T) in.readObject();
-			log.write("Objet " + obj + " lu!");
+			log.write("Objet " + obj + "bien lu!");
 			return obj;
 		} 
 		catch (ClassNotFoundException | IOException e) {
@@ -51,7 +51,7 @@ public abstract class Serial<T extends Serializable> {
 	
 	public T createFile(T obj, String filename, LogInterface log) {
 		if (exists(filename)) {
-			log.write("Création impossible");
+			log.write("CrÃ©ation impossible");
 			return null;
 		}
 		else {
@@ -62,7 +62,7 @@ public abstract class Serial<T extends Serializable> {
 	
 	public T updateFile(T obj, String filename, LogInterface log) {
 		if (!exists(filename)) {
-			log.write("Mise à jour impossible");
+			log.write("Mise A Jour impossible");
 			return null;
 		}
 		else {

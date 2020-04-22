@@ -14,7 +14,7 @@ public enum Serialiser {
 				.getFactory(dt)
 				.getPersonnelGroupeDAO();
 		
-		// Creation du personnel
+				// Creation du personnel
 				PersonnelImuable Marie = new PersonnelImuable.Builder("Marie", "Popins").build();
 				PersonnelImuable  Ki = new PersonnelImuable.Builder("Ki", "Arnold").build();
 				PersonnelGroupe pg = new PersonnelGroupe();
@@ -26,8 +26,8 @@ public enum Serialiser {
 				// Ajout DAO
 				pgDAO.create(pg);
 				pgDAO.create(spg);
-				personnelDAO.create(Marie); // update
-				personnelDAO.create(Ki); // update
+				personnelDAO.create(Marie);
+				personnelDAO.create(Ki);
 				System.out.println("\t" + pgDAO.read(spg.getId()));
 				System.out.println("\t" + personnelDAO.read("Ki"));
 	}

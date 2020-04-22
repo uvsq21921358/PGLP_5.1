@@ -83,7 +83,7 @@ public class SerialisationTest {
 	@Test()
 	public void testPersonnelCRUD() {
 		DAO<PersonnelImuable> pI = ADAOFactory.getFactory(DAOType.Serial).getPersonnelDAO();
-		pI.delete(per); // Supprime le fichier s'il existe déjà
+		pI.delete(per);
 		pI.create(per);
 		per.addNumTelephone(new NumTelephone("70010203","34567890","2345676788"));
 		pI.update(per);
@@ -92,9 +92,9 @@ public class SerialisationTest {
 	}
 	
 	@Test()
-	public void ersonnelGroupeCRUDTest() {
+	public void personnelGroupeCRUDTest() {
 		DAO<PersonnelGroupe> pegr = DAOFactory.getFactory(DAOType.Serial).getPersonnelGroupeDAO();
-		pegr.delete(pergr); // Supprime le fichier s'il existe déjà
+		pegr.delete(pergr); 
 		pegr.create(pergr);
 		pergr.addPersonnel(per);
 		pegr.update(pergr);

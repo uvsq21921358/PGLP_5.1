@@ -3,7 +3,7 @@ package uvsq21921358;
 public abstract class ADAOFactory {
 
 	// Une factory
-	public enum DAOType {JDBC, Serial};
+	public enum DAOType { Serial};
 	public abstract DAO<PersonnelImuable> getPersonnelDAO();
 	public abstract DAO<PersonnelGroupe> getPersonnelGroupeDAO();
 
