@@ -35,8 +35,8 @@ public class SerialisationTest {
 		ObjectOutputStream outp;
 		ObjectInputStream intp;
 		try {
-			outp = new ObjectOutputStream(new FileOutputStream("serial.txt"));
-			intp = new ObjectInputStream(new FileInputStream("serial.txt"));
+			outp = new ObjectOutputStream(new FileOutputStream("Outserial.txt"));
+			intp = new ObjectInputStream(new FileInputStream("Intserial.txt"));
 			try {
 				outp.writeObject(persI);
 				persI = (PersonnelImuable) intp.readObject();
@@ -60,8 +60,8 @@ public class SerialisationTest {
 		ObjectOutputStream outp;
 		ObjectInputStream intp;
 		try {
-			outp = new ObjectOutputStream(new FileOutputStream("serial.txt"));
-			intp = new ObjectInputStream(new FileInputStream("serial.txt"));
+			outp = new ObjectOutputStream(new FileOutputStream("Outserial.txt"));
+			intp = new ObjectInputStream(new FileInputStream("Intserial.txt"));
 			try {
 				outp.writeObject(pergr);
 				perg = (PersonnelGroupe) intp.readObject();
