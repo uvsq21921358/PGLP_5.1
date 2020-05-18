@@ -29,7 +29,7 @@ public class SerialisationTest {
 	}
 	
 	
-	@Test()
+	/*@Test()
 	public void serialiserPersonnelTest() {
 		PersonnelImuable persI = null;
 		ObjectOutputStream outp;
@@ -99,6 +99,6 @@ public class SerialisationTest {
 		pergr.addPersonnel(per);
 		pegr.update(pergr);
 		assertEquals(pergr, pegr.read(pergr.getId()));
-	}
+	}*/
 
 }
